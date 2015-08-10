@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="195998289" gstVersion="23217" version="3.0">
+<Project defaultApplication="241782672" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -10,6 +10,7 @@
           <File filePath="clients/auto_completion/auto_completion.4gl"/>
           <File filePath="clients/auto_completion/auto_completion.4st"/>
           <File filePath="clients/auto_completion/auto_completion.per"/>
+          <File filePath="clients/auto_completion/readme.txt"/>
         </Application>
       </Group>
       <Group label="02_clickable_image">
@@ -17,9 +18,17 @@
         <Application id="-280506466" label="splash"/>
         <Application id="-1936479334" label="update_delete"/>
       </Group>
-      <Group label="03_datetime">
-        <Application id="1469528948" label="datetimeedit"/>
-        <Application id="241782672" label="timeedit"/>
+      <Group label="03_datetime" targetDirectory="$(ProjectDir)/clients/datetime">
+        <Application id="1469528948" label="datetimeedit">
+          <File filePath="clients/datetime/datetimeedit.4gl"/>
+          <File filePath="clients/datetime/datetimeedit.per"/>
+          <File filePath="clients/datetime/readme_datetimeedit.txt"/>
+        </Application>
+        <Application id="241782672" label="timeedit">
+          <File filePath="clients/datetime/readme_timeedit.txt"/>
+          <File filePath="clients/datetime/timeedit.4gl"/>
+          <File filePath="clients/datetime/timeedit.per"/>
+        </Application>
       </Group>
       <Group label="04_webcomponent"/>
       <Group label="05_scrollgrid">
