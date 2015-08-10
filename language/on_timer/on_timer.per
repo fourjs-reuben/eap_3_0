@@ -1,0 +1,13 @@
+LAYOUT (TEXT="Pending Job List")
+TABLE
+{
+[f01       |f02                   ]
+}
+END
+END
+ATTRIBUTES
+f01 = formonly.job_id, TITLE="Job Id";
+TIMEEDIT f02 = formonly.created_time, TITLE="Created";
+
+INSTRUCTIONS
+SCREEN RECORD scr(job_id, created_time);
