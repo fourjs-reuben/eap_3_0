@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="723292643" gstVersion="23217" version="3.0">
+<Project defaultApplication="1685104767" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -34,8 +34,12 @@
       <Group label="05_scrollgrid">
         <Application id="527187058" label="scrollgrid"/>
       </Group>
-      <Group label="06_image_centralization">
-        <Application id="1685104767" label="fontawesome"/>
+      <Group label="06_image_centralization" targetDirectory="$(ProjectDir)/clients/image/centralization">
+        <Application id="1685104767" label="fontawesome">
+          <File filePath="clients/image_centralization/fontawesome.4gl"/>
+          <File filePath="clients/image_centralization/fontawesome.per"/>
+          <File filePath="clients/image_centralization/readme.txt"/>
+        </Application>
       </Group>
       <Group label="07_copy_readonly" targetDirectory="$(ProjectDir)/clients/copy_readonly">
         <Application id="723292643" label="copy_readonly">
