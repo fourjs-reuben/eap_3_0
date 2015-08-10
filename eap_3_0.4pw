@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="173556028" gstVersion="23217" version="3.0">
+<Project defaultApplication="527187058" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -31,8 +31,13 @@
         </Application>
       </Group>
       <Group label="04_webcomponent"/>
-      <Group label="05_scrollgrid">
-        <Application id="527187058" label="scrollgrid"/>
+      <Group label="05_scrollgrid" targetDirectory="$(ProjectDir)/clients/scrollgrid">
+        <Application id="527187058" label="scrollgrid">
+          <File filePath="clients/scrollgrid/readme.txt"/>
+          <File filePath="clients/scrollgrid/scrollgrid.4gl"/>
+          <File filePath="clients/scrollgrid/scrollgrid_no.per"/>
+          <File filePath="clients/scrollgrid/scrollgrid_yes.per"/>
+        </Application>
       </Group>
       <Group label="06_image_centralization" targetDirectory="$(ProjectDir)/clients/image/centralization">
         <Application id="1685104767" label="fontawesome">
