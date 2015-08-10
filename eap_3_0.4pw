@@ -5,8 +5,12 @@
   <PlatformList version="1.0"/>
   <Group label="eap_3_0" targetDirectory="$(ProjectDir)">
     <Group label="01_clients">
-      <Group label="01_auto_completion">
-        <Application id="195998289" label="auto_completion"/>
+      <Group label="01_auto_completion" targetDirectory="$(ProjectDir)/clients/auto_completion">
+        <Application id="195998289" label="auto_completion">
+          <File filePath="clients/auto_completion/auto_completion.4gl"/>
+          <File filePath="clients/auto_completion/auto_completion.4st"/>
+          <File filePath="clients/auto_completion/auto_completion.per"/>
+        </Application>
       </Group>
       <Group label="02_clickable_image">
         <Application id="1040486991" label="add_to_basket"/>

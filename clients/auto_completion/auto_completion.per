@@ -1,0 +1,11 @@
+LAYOUT (TEXT="AutoCompletion")
+GRID
+{
+Country     [f01                        ]
+Autoset     [f02]
+}
+END
+END
+ATTRIBUTES
+EDIT f01 = formonly.country, COMPLETER, COMMENT="Enter a country";
+CHECKBOX f02 = formonly.autoset, VALUECHECKED=TRUE, VALUEUNCHECKED=FALSE, NOT NULL, COMMENT="Select to set if one item in list";
