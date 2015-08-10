@@ -40,17 +40,19 @@ DEFINE upper_filter, upper_list_element STRING
                     IF upper_list_element MATCHES upper_filter THEN
                         LET completer_list[completer_list.getLength()+1] = list[i]
                     END IF
+                    -- SLEEP 1 --Uncomment this to note effect of slow code
                     IF completer_list.getLength()>=50 THEN
                         EXIT FOR
                     END IF
                 END FOR
                 IF autoset AND completer_list.getLength() = 1 THEN
-                    -- If autoset enabled and there is one value, set the value
+                    -- If autoset enabled and there is one value, set the value and move to next field
                     LET country = completer_list[1]
                     CALL DIALOG.setCompleterItems(NULL)
                     CALL f.setfieldstyle("country","green")
                     NEXT FIELD NEXT
                 ELSE
+                    -- Display the list
                     CALL DIALOG.setCompleterItems(completer_list)
                 END IF
                 
