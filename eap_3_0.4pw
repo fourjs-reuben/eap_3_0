@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="241782672" gstVersion="23217" version="3.0">
+<Project defaultApplication="723292643" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -37,8 +37,12 @@
       <Group label="06_image_centralization">
         <Application id="1685104767" label="fontawesome"/>
       </Group>
-      <Group label="07_copy_readonly">
-        <Application id="723292643" label="readonly"/>
+      <Group label="07_copy_readonly" targetDirectory="$(ProjectDir)/clients/copy_readonly">
+        <Application id="723292643" label="copy_readonly">
+          <File filePath="clients/copy_readonly/copy_readonly.4gl"/>
+          <File filePath="clients/copy_readonly/copy_readonly.per"/>
+          <File filePath="clients/copy_readonly/readme.txt"/>
+        </Application>
       </Group>
       <Group label="08_responsive_layout">
         <Application id="173556028" label="responsivelayout"/>
