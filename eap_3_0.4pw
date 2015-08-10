@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Project defaultApplication="195998289" gstVersion="23217" version="3.0">
+  <Settings/>
+  <LanguageList version="1.0"/>
+  <PlatformList version="1.0"/>
+  <Group label="eap_3_0" targetDirectory="$(ProjectDir)">
+    <Group label="01_clients">
+      <Group label="01_auto_completion">
+        <Application id="195998289" label="auto_completion"/>
+      </Group>
+      <Group label="02_clickable_image">
+        <Application id="1040486991" label="add_to_basket"/>
+        <Application id="-280506466" label="splash"/>
+        <Application id="-1936479334" label="update_delete"/>
+      </Group>
+      <Group label="03_datetime">
+        <Application id="1469528948" label="datetimeedit"/>
+        <Application id="241782672" label="timeedit"/>
+      </Group>
+      <Group label="04_webcomponent"/>
+      <Group label="05_scrollgrid">
+        <Application id="527187058" label="scrollgrid"/>
+      </Group>
+      <Group label="06_image_centralization">
+        <Application id="1685104767" label="fontawesome"/>
+      </Group>
+      <Group label="07_copy_readonly">
+        <Application id="723292643" label="readonly"/>
+      </Group>
+      <Group label="08_responsive_layout">
+        <Application id="173556028" label="responsivelayout"/>
+      </Group>
+      <Group label="09_predictable_layout">
+        <Application id="-921382068" label="predictivelayout"/>
+      </Group>
+    </Group>
+    <Group label="02_language">
+      <Group label="01_on_timer">
+        <Application id="-267096914" label="ontimer"/>
+      </Group>
+      <Group label="02_sort"/>
+      <Group label="03_generic_ui"/>
+      <Group label="04_action_attribute">
+        <Application id="-370079158" label="actionattribute"/>
+      </Group>
+      <Group label="05_base_channel_server">
+        <Application id="-2083586622" label="base_channel_server"/>
+      </Group>
+      <Group label="06_on_selection_change">
+        <Application id="1831788688" label="on_selection_change"/>
+      </Group>
+      <Group label="07_string_utility">
+        <Application id="1178245253" label="string_utility"/>
+      </Group>
+      <Group label="08_datetime_utility">
+        <Application id="-882117745" label="datetime_utility"/>
+      </Group>
+    </Group>
+    <Group label="03_mobile">
+      <Group label="01_stack">
+        <Application id="1142316768" label="stack"/>
+      </Group>
+      <Group label="02_grid">
+        <Application id="888516238" label="grid"/>
+      </Group>
+      <Group label="03_run_on_server">
+        <Application id="-353163129" label="run_on_server"/>
+      </Group>
+      <Group label="04_fab">
+        <Application id="1769506400" label="fab"/>
+      </Group>
+      <Group label="05_video">
+        <Application id="1983600576" label="video"/>
+      </Group>
+      <Group label="06_push">
+        <Application id="1579525984" label="push"/>
+      </Group>
+      <Group label="07_feinfo">
+        <Application id="1154918616" label="feinfo"/>
+      </Group>
+    </Group>
+  </Group>
+</Project>
