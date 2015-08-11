@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="-267096914" gstVersion="23217" version="3.0">
+<Project defaultApplication="-921382068" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -60,8 +60,13 @@
           <File filePath="clients/responsive_layout/responsive_layout.per"/>
         </Application>
       </Group>
-      <Group label="09_predictable_layout">
-        <Application id="-921382068" label="predictivelayout"/>
+      <Group label="09_predictable_layout" targetDirectory="$(ProjectDir)/clients/predictive_layout">
+        <Application id="-921382068" label="emptyrowcol">
+          <File filePath="clients/predictable_layout/emptyrowcol.4gl"/>
+          <File filePath="clients/predictable_layout/emptyrowcol.4st"/>
+          <File filePath="clients/predictable_layout/emptyrowcol.per"/>
+          <File filePath="clients/predictable_layout/readme.txt"/>
+        </Application>
       </Group>
     </Group>
     <Group label="02_language">
