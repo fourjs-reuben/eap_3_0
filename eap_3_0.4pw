@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="-1936479334" gstVersion="23217" version="3.0">
+<Project defaultApplication="1040486991" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -14,7 +14,11 @@
         </Application>
       </Group>
       <Group label="02_clickable_image" targetDirectory="$(ProjectDir)/clients/clickable_image">
-        <Application id="1040486991" label="add_to_basket"/>
+        <Application id="1040486991" label="add_to_basket">
+          <File filePath="clients/clickable_image/add_to_basket.4gl"/>
+          <File filePath="clients/clickable_image/add_to_basket.per"/>
+          <File filePath="clients/clickable_image/readme_add_to_basket.txt"/>
+        </Application>
         <Application id="-280506466" label="splash">
           <File filePath="clients/clickable_image/readme_splash.txt"/>
           <File filePath="clients/clickable_image/splash.4gl"/>
