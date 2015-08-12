@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="-353163129" gstVersion="23217" version="3.0">
+<Project defaultApplication="1154918616" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -184,8 +184,12 @@
       <Group label="06_push">
         <Application id="1579525984" label="push"/>
       </Group>
-      <Group label="07_feinfo">
-        <Application id="1154918616" label="feinfo"/>
+      <Group label="07_feinfo" targetDirectory="$(ProjectDir)/mobile/feinfo">
+        <Application id="1154918616" label="feinfo">
+          <File filePath="mobile/feinfo/feinfo.4gl"/>
+          <File filePath="mobile/feinfo/feinfo.per"/>
+          <File filePath="mobile/feinfo/readme.txt"/>
+        </Application>
       </Group>
     </Group>
   </Group>
