@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="1279849724" gstVersion="23217" version="3.0">
+<Project defaultApplication="308128018" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -99,6 +99,7 @@
         <Application id="1279849724" label="on_sort">
           <File filePath="language/sort/on_sort.4gl"/>
           <File filePath="language/sort/on_sort.per"/>
+          <File filePath="language/sort/readme_on_sort.txt"/>
         </Application>
         <Application id="1718617188" label="sort_method">
           <File filePath="language/sort/readme_sort_method.txt"/>
@@ -114,8 +115,16 @@
           <File filePath="language/action_attribute/readme.txt"/>
         </Application>
       </Group>
-      <Group label="05_base_channel_server">
-        <Application id="-2083586622" label="base_channel_server"/>
+      <Group label="05_base_channel_server" targetDirectory="$(ProjectDir)/language/base_channel_server">
+        <Application id="308128018" label="base_channel_client">
+          <File filePath="language/base_channel_server/base_channel_client.4gl"/>
+          <File filePath="language/base_channel_server/base_channel_client.per"/>
+        </Application>
+        <Application id="-2083586622" label="base_channel_server">
+          <File filePath="language/base_channel_server/base_channel_server.4gl"/>
+          <File filePath="language/base_channel_server/base_channel_server.per"/>
+          <File filePath="language/base_channel_server/readme.txt"/>
+        </Application>
       </Group>
       <Group label="06_on_selection_change">
         <Application id="1831788688" label="on_selection_change"/>
