@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="1831788688" gstVersion="23217" version="3.0">
+<Project defaultApplication="-1030265552" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -133,8 +133,12 @@
           <File filePath="language/on_selection_change/readme.txt"/>
         </Application>
       </Group>
-      <Group label="07_string_utility">
-        <Application id="1178245253" label="string_utility"/>
+      <Group label="07_string_utility" targetDirectory="$(ProjectDir)/language/string_utility">
+        <Application id="-1030265552" label="encode_decode">
+          <File filePath="language/string_utility/encode_decode.4gl"/>
+          <File filePath="language/string_utility/encode_decode.per"/>
+          <File filePath="language/string_utility/readme.txt"/>
+        </Application>
       </Group>
       <Group label="08_datetime_utility">
         <Application id="-882117745" label="datetime_utility"/>

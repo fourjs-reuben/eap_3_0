@@ -1,0 +1,19 @@
+LAYOUT (TEXT="Encode/Decode methods")
+GRID
+{
+[f01                 |b01         |f02                 ]
+[                    |b02         |                    ]
+[                    |b03         |                    ]
+[                    |b04         |                    ]
+[                    |b05         |                    ]
+}
+END
+END
+ATTRIBUTES
+TEXTEDIT f01 = formonly.s1;
+TEXTEDIT f02 = formonly.s2, NOENTRY;
+BUTTON b01: urlencode, TEXT="URL Encode";
+BUTTON b02: urldecode, TEXT="URL Decode";
+BUTTON b03: base64encode, TEXT="Base 64 Encode";
+BUTTON b04: base64decode, TEXT="Base 64 Decode";
+BUTTON b05: usevalue, TEXT="Use Previous Result";
