@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="-1030265552" gstVersion="23217" version="3.0">
+<Project defaultApplication="-882117745" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -140,8 +140,12 @@
           <File filePath="language/string_utility/readme.txt"/>
         </Application>
       </Group>
-      <Group label="08_datetime_utility">
-        <Application id="-882117745" label="datetime_utility"/>
+      <Group label="08_datetime_utility" targetDirectory="$(ProjectDir)/language/datetime_utility">
+        <Application id="-882117745" label="datetime_utility">
+          <File filePath="language/datetime_utility/datetime_utility.4gl"/>
+          <File filePath="language/datetime_utility/datetime_utility.per"/>
+          <File filePath="language/datetime_utility/readme.txt"/>
+        </Application>
       </Group>
     </Group>
     <Group label="03_mobile">

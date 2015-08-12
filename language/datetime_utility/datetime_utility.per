@@ -1,0 +1,28 @@
+LAYOUT (TEXT="Datetime Methods")
+GRID
+{
+[l01                 |b01         |r01                 ]
+[l02                 |b02         |r02                 ]
+[l03                 |b03         |r03                 ]
+[l04                 |b04         |r04                 ]
+
+}
+END
+END
+ATTRIBUTES
+
+EDIT l01 = formonly.seconds1;
+BUTTON b01: seconds2time, TEXT="Seconds 2 Time";
+DATETIMEEDIT r01 = formonly.time1, NOENTRY;
+
+DATETIMEEDIT l02 = formonly.time2;
+BUTTON b02: time2seconds, TEXT="Time 2 Seconds";
+EDIT r02 = formonly.seconds2, NOENTRY;
+
+DATETIMEEDIT l03 = formonly.utc3;
+BUTTON b03: utc2time, TEXT="UTC 2 Time";
+DATETIMEEDIT r03 = formonly.time3, NOENTRY;
+
+DATETIMEEDIT l04 = formonly.time4;
+BUTTON b04: time2utc, TEXT="Time 2 UTC";
+DATETIMEEDIT r04 = formonly.utc4, NOENTRY;
