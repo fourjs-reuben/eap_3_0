@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="170781338" gstVersion="23217" version="3.0">
+<Project defaultApplication="1279849724" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -95,6 +95,10 @@
           <File filePath="language/sort/readme_sort_on_fill_buffer.txt"/>
           <File filePath="language/sort/sort_on_fill_buffer.4gl"/>
           <File filePath="language/sort/sort_on_fill_buffer.per"/>
+        </Application>
+        <Application id="1279849724" label="on_sort">
+          <File filePath="language/sort/on_sort.4gl"/>
+          <File filePath="language/sort/on_sort.per"/>
         </Application>
         <Application id="1718617188" label="sort_method">
           <File filePath="language/sort/readme_sort_method.txt"/>
