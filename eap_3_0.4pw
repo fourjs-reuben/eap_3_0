@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="1769506400" gstVersion="23217" version="3.0">
+<Project defaultApplication="-353163129" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -165,8 +165,11 @@
           <File filePath="mobile/stack/stack_and_grid.4gl"/>
         </Application>
       </Group>
-      <Group label="03_run_on_server">
-        <Application id="-353163129" label="run_on_server"/>
+      <Group label="03_run_on_server" targetDirectory="$(ProjectDir)/mobile/run_on_server">
+        <Application environment="value:LANG=en_NZ.UTF-8" id="-353163129" label="run_on_server">
+          <File filePath="mobile/run_on_server/readme.txt"/>
+          <File filePath="mobile/run_on_server/run_on_server.4gl"/>
+        </Application>
       </Group>
       <Group label="04_fab" targetDirectory="$(ProjectDir)/mobile/fab">
         <Application id="1769506400" label="fab">
