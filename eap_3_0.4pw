@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="308128018" gstVersion="23217" version="3.0">
+<Project defaultApplication="1831788688" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -126,8 +126,12 @@
           <File filePath="language/base_channel_server/readme.txt"/>
         </Application>
       </Group>
-      <Group label="06_on_selection_change">
-        <Application id="1831788688" label="on_selection_change"/>
+      <Group label="06_on_selection_change" targetDirectory="$(ProjectDir)/language/on_selection_change">
+        <Application id="1831788688" label="on_selection_change">
+          <File filePath="language/on_selection_change/on_selection_change.4gl"/>
+          <File filePath="language/on_selection_change/on_selection_change.per"/>
+          <File filePath="language/on_selection_change/readme.txt"/>
+        </Application>
       </Group>
       <Group label="07_string_utility">
         <Application id="1178245253" label="string_utility"/>
