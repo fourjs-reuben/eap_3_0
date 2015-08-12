@@ -113,6 +113,9 @@
           <File filePath="language/generic_ui/base_sql_handle.4gl"/>
           <File filePath="language/generic_ui/readme_base_sql_handle.txt"/>
         </Application>
+        <Application id="1925520000" label="generic_ui">
+          <File filePath="readme_generic_ui.txt"/>
+        </Application>
       </Group>
       <Group label="04_action_attribute">
         <Application id="-370079158" label="action_attribute" targetDirectory="$(ProjectDir)/language/action_attribute">

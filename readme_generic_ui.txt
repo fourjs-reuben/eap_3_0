@@ -1,0 +1,1 @@
+To show Generic UI, switch to the 3.0 FGLDIR/demo and use the dbbrowser demo
