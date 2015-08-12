@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="171279842" gstVersion="23217" version="3.0">
+<Project defaultApplication="1142316768" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -157,11 +157,12 @@
       </Group>
     </Group>
     <Group label="03_mobile">
-      <Group label="01_stack">
-        <Application id="1142316768" label="stack"/>
-      </Group>
-      <Group label="02_grid">
-        <Application id="888516238" label="grid"/>
+      <Group label="01_stack" targetDirectory="$(ProjectDir)/mobile/stack">
+        <Application id="1142316768" label="stack">
+          <File filePath="mobile/stack/grid.per"/>
+          <File filePath="mobile/stack/stack.per"/>
+          <File filePath="mobile/stack/stack_and_grid.4gl"/>
+        </Application>
       </Group>
       <Group label="03_run_on_server">
         <Application id="-353163129" label="run_on_server"/>
