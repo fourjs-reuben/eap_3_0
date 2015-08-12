@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="-882117745" gstVersion="23217" version="3.0">
+<Project defaultApplication="171279842" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -108,7 +108,12 @@
           <File filePath="language/sort/sort_method.unl"/>
         </Application>
       </Group>
-      <Group label="03_generic_ui"/>
+      <Group label="03_generic_ui">
+        <Application id="171279842" label="base_sql_handle" targetDirectory="$(ProjectDir)/language/generic_ui">
+          <File filePath="language/generic_ui/base_sql_handle.4gl"/>
+          <File filePath="language/generic_ui/readme_base_sql_handle.txt"/>
+        </Application>
+      </Group>
       <Group label="04_action_attribute">
         <Application id="-370079158" label="action_attribute" targetDirectory="$(ProjectDir)/language/action_attribute">
           <File filePath="language/action_attribute/action_attribute.4gl"/>
