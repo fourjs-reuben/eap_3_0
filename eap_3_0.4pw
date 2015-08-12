@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="1154918616" gstVersion="23217" version="3.0">
+<Project defaultApplication="-944210476" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -43,7 +43,21 @@
           <File filePath="clients/datetime/timeedit.per"/>
         </Application>
       </Group>
-      <Group label="04_webcomponent"/>
+      <Group label="04_webcomponent" targetDirectory="$(ProjectDir)/clients/webcomponent">
+        <Application id="-944210476" label="blank">
+          <File filePath="clients/webcomponent/blank.4gl"/>
+          <File filePath="clients/webcomponent/blank.per"/>
+        </Application>
+        <Application id="-843633280" label="programmable"/>
+        <Application environment="dirlist:FGLIMAGEPATH=./touchpad" id="-1017269824" label="touchpad">
+          <VirtualFolder label="touchpad">
+            <File filePath="clients/webcomponent/touchpad/touchpad.html"/>
+          </VirtualFolder>
+          <File filePath="clients/webcomponent/fgl_touchpad.4gl"/>
+          <File filePath="clients/webcomponent/touchpad.4gl"/>
+          <File filePath="clients/webcomponent/touchpad.per"/>
+        </Application>
+      </Group>
       <Group label="05_scrollgrid" targetDirectory="$(ProjectDir)/clients/scrollgrid">
         <Application id="527187058" label="scrollgrid">
           <File filePath="clients/scrollgrid/readme.txt"/>
@@ -155,6 +169,7 @@
           <File filePath="language/datetime_utility/readme.txt"/>
         </Application>
       </Group>
+      <Group label="09_webserver"/>
     </Group>
     <Group label="03_mobile">
       <Group label="01_stack" targetDirectory="$(ProjectDir)/mobile/stack">
