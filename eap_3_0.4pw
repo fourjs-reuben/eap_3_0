@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="1142316768" gstVersion="23217" version="3.0">
+<Project defaultApplication="1769506400" gstVersion="23217" version="3.0">
   <Settings/>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
@@ -160,6 +160,7 @@
       <Group label="01_stack" targetDirectory="$(ProjectDir)/mobile/stack">
         <Application id="1142316768" label="stack">
           <File filePath="mobile/stack/grid.per"/>
+          <File filePath="mobile/stack/readme.txt"/>
           <File filePath="mobile/stack/stack.per"/>
           <File filePath="mobile/stack/stack_and_grid.4gl"/>
         </Application>
@@ -167,8 +168,12 @@
       <Group label="03_run_on_server">
         <Application id="-353163129" label="run_on_server"/>
       </Group>
-      <Group label="04_fab">
-        <Application id="1769506400" label="fab"/>
+      <Group label="04_fab" targetDirectory="$(ProjectDir)/mobile/fab">
+        <Application id="1769506400" label="fab">
+          <File filePath="mobile/fab/fab.4gl"/>
+          <File filePath="mobile/fab/fab.per"/>
+          <File filePath="mobile/fab/readme.txt"/>
+        </Application>
       </Group>
       <Group label="05_video">
         <Application id="1983600576" label="video"/>
