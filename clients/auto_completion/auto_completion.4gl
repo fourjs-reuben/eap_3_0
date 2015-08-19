@@ -1,9 +1,10 @@
-DEFINE list DYNAMIC ARRAY OF STRING
+DEFINE m_cursor_prepared BOOLEAN
+CONSTANT COMPLETER_LIST_SIZE=50       -- maximum size of completer list
+CONSTANT MINIMUM_COMPLETER_LENGTH=2   -- minimum characters to be entered
 
 MAIN
 DEFINE country STRING
 DEFINE autoset BOOLEAN
-
 
 DEFINE i INTEGER
 DEFINE filter STRING
@@ -11,40 +12,42 @@ DEFINE completer_list DYNAMIC ARRAY OF STRING
 DEFINE w ui.Window
 DEFINE f ui.Form
 
-DEFINE upper_filter, upper_list_element STRING
-
+DEFINE country_name CHAR(50)
 
     OPTIONS INPUT WRAP
-    CLOSE WINDOW SCREEN
-    CALL ui.Interface.LoadStyles("auto_completion")
-    CALL load_data()
-    
 
+    CALL ui.Interface.LoadStyles("auto_completion")
+    
+    CONNECT TO ":memory:"
+    LET m_cursor_prepared = FALSE
+    CALL init_database()
+    
+    CLOSE WINDOW SCREEN
     OPEN WINDOW w WITH FORM "auto_completion"
     LET w = ui.Window.getCurrent()
     LET f= w.getForm()
 
     INPUT BY NAME country, autoset ATTRIBUTES(UNBUFFERED, WITHOUT DEFAULTS=TRUE)
         ON CHANGE country
-            CALL completer_list.clear()
+            IF NOT m_cursor_prepared THEN
+                DECLARE country_curs CURSOR FROM SFMT("SELECT name FROM country WHERE UPPER(name) LIKE ? ORDER BY name LIMIT %1",COMPLETER_LIST_SIZE)
+                LET m_cursor_prepared = TRUE
+            END IF
           
-            -- What user is currently typing is in buffer, add * for later matches
+            -- What user is currently typing is in the buffer, add % for LIKE 
+            CALL completer_list.clear()
             LET filter = FGL_DIALOG_GETBUFFER()
-            IF filter.getLength() > 0 THEN
-                LET filter = filter,"*"
-
-                -- Go through list and only include elements that match
-                LET upper_filter = filter.toUpperCase()
-                FOR i = 1 TO list.getLength()
-                    LET upper_list_element = list[i].toUpperCase()
-                    IF upper_list_element MATCHES upper_filter THEN
-                        LET completer_list[completer_list.getLength()+1] = list[i]
-                    END IF
-                    -- SLEEP 1 --Uncomment this to note effect of slow code
-                    IF completer_list.getLength()>=50 THEN
+            IF filter.getLength() >= MINIMUM_COMPLETER_LENGTH THEN
+                LET filter = filter.toUpperCase(),"%"
+                OPEN country_curs USING filter
+                FOR i = 1 TO COMPLETER_LIST_SIZE
+                    FETCH country_curs INTO country_name
+                    IF status = NOTFOUND THEN
                         EXIT FOR
                     END IF
+                    LET completer_list[i] = country_name CLIPPED
                 END FOR
+                
                 IF autoset AND completer_list.getLength() = 1 THEN
                     -- If autoset enabled and there is one value, set the value and move to next field
                     LET country = completer_list[1]
@@ -63,263 +66,263 @@ DEFINE upper_filter, upper_list_element STRING
                     OTHERWISE CALL f.setfieldstyle("country","")
                 END CASE
             ELSE
+                CALL DIALOG.setCompleterItems(NULL)
                 CALL f.setfieldstyle("country","")
             END IF
     END INPUT
 END MAIN
 
-FUNCTION load_data()
-   -- I wonder if there is a public web service that will return these values
-   CALL list.clear()
-   LET list[1] = "Afghanistan"
-   LET list[2] = "Aland Islands"
-   LET list[3] = "Albania"
-   LET list[4] = "Algeria"
-   LET list[5] = "American Ssamoa"
-   LET list[6] = "Andorra"
-   LET list[7] = "Aangola"
-   LET list[8] = "Anguilla"
-   LET list[9] = "Antarctica"
-   LET list[10] = "Antigua and Barbuda"
-   LET list[11] = "Argentina"
-   LET list[12] = "Armenia"
-   LET list[13] = "Aruba"
-   LET list[14] = "Australia"
-   LET list[15] = "Austria"
-   LET list[16] = "Azerbaijan"
-   LET list[17] = "Bahamas"
-   LET list[18] = "Bahrain"
-   LET list[19] = "Bangladesh"
-   LET list[20] = "Barbados"
-   LET list[21] = "Belarus"
-   LET list[22] = "Belgium"
-   LET list[23] = "Belize"
-   LET list[24] = "Benin"
-   LET list[25] = "Bermuda"
-   LET list[26] = "Bhutan"
-   LET list[27] = "Bolivia"
-   LET list[28] = "Bbosnia and Herzegovina"
-   LET list[29] = "Botswana"
-   LET list[30] = "Bouvet Island"
-   LET list[31] = "Brazil"
-   LET list[32] = "British Indian Ocean Territory"
-   LET list[33] = "Brunei Darussalam"
-   LET list[34] = "Bulgaria"
-   LET list[35] = "Burkina Faso"
-   LET list[36] = "Burundi"
-   LET list[37] = "Ccambodia"
-   LET list[38] = "Cameroon"
-   LET list[39] = "Canada"
-   LET list[40] = "Cape Verde"
-   LET list[41] = "Cayman Islands"
-   LET list[42] = "Central African Republic"
-   LET list[43] = "Chad"
-   LET list[44] = "Chile"
-   LET list[45] = "China"
-   LET list[46] = "Christmas Island"
-   LET list[47] = "Cocos (Keeling) Islands"
-   LET list[48] = "Colombia"
-   LET list[49] = "Comoros"
-   LET list[50] = "Congo"
-   LET list[51] = "Congo, the Democratic Republic of the"
-   LET list[52] = "Cook Islands"
-   LET list[53] = "Costa Rica"
-   LET list[54] = "Cote D'Ivoire"
-   LET list[55] = "Croatia"
-   LET list[56] = "Cuba"
-   LET list[57] = "Cyprus"
-   LET list[58] = "Czech Republic"
-   LET list[59] = "Denmark"
-   LET list[60] = "Djibouti"
-   LET list[61] = "Dominica"
-   LET list[62] = "Dominican Republic"
-   LET list[63] = "Ecuador"
-   LET list[64] = "Egypt"
-   LET list[65] = "El Salvador"
-   LET list[66] = "Equatorial Guinea"
-   LET list[67] = "Eritrea"
-   LET list[68] = "Estonia"
-   LET list[69] = "Ethiopia"
-   LET list[70] = "Falkland Islands"
-   LET list[71] = "Faroe Islands"
-   LET list[72] = "Fiji"
-   LET list[73] = "Finland"
-   LET list[74] = "France"
-   LET list[75] = "French Guiana"
-   LET list[76] = "French Polynesia"
-   LET list[77] = "French Southern Territories"
-   LET list[78] = "Gabon"
-   LET list[79] = "Gambia"
-   LET list[80] = "Georgia"
-   LET list[81] = "Germany"
-   LET list[82] = "Ghana"
-   LET list[83] = "Gibraltar"
-   LET list[84] = "Greece"
-   LET list[85] = "Greenland"
-   LET list[86] = "Grenada"
-   LET list[87] = "Guadeloupe"
-   LET list[88] = "Guam"
-   LET list[89] = "Guatemala"
-   LET list[90] = "Guernsey"
-   LET list[91] = "Guinea"
-   LET list[92] = "Guinea-Bissau"
-   LET list[93] = "Guyana"
-   LET list[94] = "Haiti"
-   LET list[95] = "Heard Island and Mcdonald Islands"
-   LET list[96] = "Holy See (Vatican City State)"
-   LET list[97] = "Honduras"
-   LET list[98] = "Hong Kong"
-   LET list[99] = "Hungary"
-   LET list[100] = "Iceland"
-   LET list[101] = "India"
-   LET list[102] = "Indonesia"
-   LET list[103] = "Iran, Islamic Republic of"
-   LET list[104] = "Iraq"
-   LET list[105] = "Ireland"
-   LET list[106] = "Isle of Man"
-   LET list[107] = "Israel"
-   LET list[108] = "Italy"
-   LET list[109] = "Jamaica"
-   LET list[110] = "Japan"
-   LET list[111] = "Jersey"
-   LET list[112] = "Jordan"
-   LET list[113] = "Kazakhstan"
-   LET list[114] = "Kenya"
-   LET list[115] = "Kiribati"
-   LET list[116] = "Korea, Democratic People's Republic of"
-   LET list[117] = "Korea, Republic of"
-   LET list[118] = "Kuwait"
-   LET list[119] = "Kyrgyzstan"
-   LET list[120] = "Lao people's Democratic Republic"
-   LET list[121] = "Latvia"
-   LET list[122] = "Lebanon"
-   LET list[123] = "Lesotho"
-   LET list[124] = "Liberia"
-   LET list[125] = "Libyan Arab Jamahiriya"
-   LET list[126] = "Liechtenstein"
-   LET list[127] = "Lithuania"
-   LET list[128] = "Luxembourg"
-   LET list[129] = "Macao"
-   LET list[130] = "Macedonia, the Former Yugoslav Republic of"
-   LET list[131] = "Madagascar"
-   LET list[132] = "Malawi"
-   LET list[133] = "Malaysia"
-   LET list[134] = "Maldives"
-   LET list[135] = "Mali"
-   LET list[136] = "Malta"
-   LET list[137] = "Marshall Islands"
-   LET list[138] = "Martinique"
-   LET list[139] = "Mauritania"
-   LET list[140] = "Mauritius"
-   LET list[141] = "Mayotte"
-   LET list[142] = "Mexico"
-   LET list[143] = "Micronesia, Federated States of"
-   LET list[144] = "Moldova"
-   LET list[145] = "Monaco"
-   LET list[146] = "Mongolia"
-   LET list[147] = "Montenegro"
-   LET list[148] = "Montserrat"
-   LET list[149] = "Morocco"
-   LET list[150] = "Mozambique"
-   LET list[151] = "Myanmar"
-   LET list[152] = "Namibia"
-   LET list[153] = "Nauru"
-   LET list[154] = "Nepal"
-   LET list[155] = "Netherlands"
-   LET list[156] = "Netherlands Antilles"
-   LET list[157] = "New Caledonia"
-   LET list[158] = "New Zealand"
-   LET list[159] = "Nicaragua"
-   LET list[160] = "Niger"
-   LET list[161] = "Nigeria"
-   LET list[162] = "Niue"
-   LET list[163] = "Norfolk Island"
-   LET list[164] = "Northern Mariana Islands"
-   LET list[165] = "Norway"
-   LET list[166] = "Oman"
-   LET list[167] = "Pakistan"
-   LET list[168] = "Palau"
-   LET list[169] = "Palestinian Territory, Occupied"
-   LET list[170] = "Panama"
-   LET list[171] = "Papua New Guinea"
-   LET list[172] = "Paraguay"
-   LET list[173] = "Peru"
-   LET list[174] = "Philippines"
-   LET list[175] = "Pitcairn"
-   LET list[176] = "Poland"
-   LET list[177] = "Portugal"
-   LET list[178] = "Puerto Rico"
-   LET list[179] = "Qatar"
-   LET list[180] = "Reunion"
-   LET list[181] = "Romania"
-   LET list[182] = "Russian Federation"
-   LET list[183] = "Rwanda"
-   LET list[184] = "Saint Barthelemy"
-   LET list[185] = "Saint Helena"
-   LET list[186] = "Saint Kitts and Nevis"
-   LET list[187] = "Saint Lucia"
-   LET list[188] = "Saint Martin"
-   LET list[189] = "Saint Pierre and Miquelon"
-   LET list[190] = "Saint Vincent and the Grenadines"
-   LET list[191] = "Samoa"
-   LET list[192] = "San Marino"
-   LET list[193] = "Sao Tome and Principe"
-   LET list[194] = "Saudi Arabia"
-   LET list[195] = "Senegal"
-   LET list[196] = "Serbia"
-   LET list[197] = "Seychelles"
-   LET list[198] = "Sierra Leone"
-   LET list[199] = "Singapore"
-   LET list[200] = "Slovakia"
-   LET list[201] = "Slovenia"
-   LET list[202] = "Solomon Islands"
-   LET list[203] = "Somalia"
-   LET list[204] = "South Africa"
-   LET list[205] = "South Georgia and the South Sandwich Islands"
-   LET list[206] = "Spain"
-   LET list[207] = "Sri Lanka"
-   LET list[208] = "Sudan"
-   LET list[209] = "Suriname"
-   LET list[210] = "Svalbard and Jan Mayen"
-   LET list[211] = "Swaziland"
-   LET list[212] = "Sweden"
-   LET list[213] = "Switzerland"
-   LET list[214] = "Syrian Arab Republic"
-   LET list[215] = "Taiwan, Province of China"
-   LET list[216] = "Tajikistan"
-   LET list[217] = "Tanzania, United Republic of"
-   LET list[218] = "Thailand"
-   LET list[219] = "Timor-leste"
-   LET list[220] = "Togo"
-   LET list[221] = "Tokelau"
-   LET list[222] = "Tonga"
-   LET list[223] = "Trinidad and Tobago"
-   LET list[224] = "Tunisia"
-   LET list[225] = "Turkey"
-   LET list[226] = "Turkmenistan"
-   LET list[227] = "Turks and Caicos Islands"
-   LET list[228] = "Tuvalu"
-   LET list[229] = "Uganda"
-   LET list[230] = "Ukraine"
-   LET list[231] = "United Arab Emirates"
-   LET list[232] = "United Kingdom"
-   LET list[233] = "United States"
-   LET list[234] = "United States Minor Outlying Islands"
-   LET list[235] = "Uruguay"
-   LET list[236] = "Uzbekistan"
-   LET list[237] = "Vanuatu"
-   LET list[238] = "Vatican City State"
-   LET list[239] = "Venezuela"
-   LET list[240] = "Viet Nam"
-   LET list[241] = "Virgin Islands, British"
-   LET list[242] = "Virgin Islands, U.S."
-   LET list[243] = "Wallis and Futuna"
-   LET list[244] = "Western Sahara"
-   LET list[245] = "Yemen"
-   LET list[246] = "Zambia"
-   LET list[247] = "Zimbabwe"
 
-   -- test for trailing space not to be clipped
-   -- if enter NEW should see this entry, when type NEW<space> this should disapppear
-   -- LET list[248] = "NEWFOUNDLAND"
+
+FUNCTION init_database()
+
+    CREATE TABLE country (name CHAR(50))
+
+    INSERT INTO country VALUES("Afghanistan")
+    INSERT INTO country VALUES("Aland Islands")
+    INSERT INTO country VALUES("Albania")
+    INSERT INTO country VALUES("Algeria")
+    INSERT INTO country VALUES("American Samoa")
+    INSERT INTO country VALUES("Andorra")
+    INSERT INTO country VALUES("Angola")
+    INSERT INTO country VALUES("Anguilla")
+    INSERT INTO country VALUES("Antarctica")
+    INSERT INTO country VALUES("Antigua and Barbuda")
+    INSERT INTO country VALUES("Argentina")
+    INSERT INTO country VALUES("Armenia")
+    INSERT INTO country VALUES("Aruba")
+    INSERT INTO country VALUES("Australia")
+    INSERT INTO country VALUES("Austria")
+    INSERT INTO country VALUES("Azerbaijan")
+    INSERT INTO country VALUES("Bahamas")
+    INSERT INTO country VALUES("Bahrain")
+    INSERT INTO country VALUES("Bangladesh")
+    INSERT INTO country VALUES("Barbados")
+    INSERT INTO country VALUES("Belarus")
+    INSERT INTO country VALUES("Belgium")
+    INSERT INTO country VALUES("Belize")
+    INSERT INTO country VALUES("Benin")
+    INSERT INTO country VALUES("Bermuda")
+    INSERT INTO country VALUES("Bhutan")
+    INSERT INTO country VALUES("Bolivia")
+    INSERT INTO country VALUES("Bosnia and Herzegovina")
+    INSERT INTO country VALUES("Botswana")
+    INSERT INTO country VALUES("Bouvet Island")
+    INSERT INTO country VALUES("Brazil")
+    INSERT INTO country VALUES("British Indian Ocean Territory")
+    INSERT INTO country VALUES("Brunei Darussalam")
+    INSERT INTO country VALUES("Bulgaria")
+    INSERT INTO country VALUES("Burkina Faso")
+    INSERT INTO country VALUES("Burundi")
+    INSERT INTO country VALUES("Cambodia")
+    INSERT INTO country VALUES("Cameroon")
+    INSERT INTO country VALUES("Canada")
+    INSERT INTO country VALUES("Cape Verde")
+    INSERT INTO country VALUES("Cayman Islands")
+    INSERT INTO country VALUES("Central African Republic")
+    INSERT INTO country VALUES("Chad")
+    INSERT INTO country VALUES("Chile")
+    INSERT INTO country VALUES("China")
+    INSERT INTO country VALUES("Christmas Island")
+    INSERT INTO country VALUES("Cocos (Keeling) Islands")
+    INSERT INTO country VALUES("Colombia")
+    INSERT INTO country VALUES("Comoros")
+    INSERT INTO country VALUES("Congo")
+    INSERT INTO country VALUES("Congo, the Democratic Republic of the")
+    INSERT INTO country VALUES("Cook Islands")
+    INSERT INTO country VALUES("Costa Rica")
+    INSERT INTO country VALUES("Cote D'Ivoire")
+    INSERT INTO country VALUES("Croatia")
+    INSERT INTO country VALUES("Cuba")
+    INSERT INTO country VALUES("Cyprus")
+    INSERT INTO country VALUES("Czech Republic")
+    INSERT INTO country VALUES("Denmark")
+    INSERT INTO country VALUES("Djibouti")
+    INSERT INTO country VALUES("Dominica")
+    INSERT INTO country VALUES("Dominican Republic")
+    INSERT INTO country VALUES("Ecuador")
+    INSERT INTO country VALUES("Egypt")
+    INSERT INTO country VALUES("El Salvador")
+    INSERT INTO country VALUES("Equatorial Guinea")
+    INSERT INTO country VALUES("Eritrea")
+    INSERT INTO country VALUES("Estonia")
+    INSERT INTO country VALUES("Ethiopia")
+    INSERT INTO country VALUES("Falkland Islands")
+    INSERT INTO country VALUES("Faroe Islands")
+    INSERT INTO country VALUES("Fiji")
+    INSERT INTO country VALUES("Finland")
+    INSERT INTO country VALUES("France")
+    INSERT INTO country VALUES("French Guiana")
+    INSERT INTO country VALUES("French Polynesia")
+    INSERT INTO country VALUES("French Southern Territories")
+    INSERT INTO country VALUES("Gabon")
+    INSERT INTO country VALUES("Gambia")
+    INSERT INTO country VALUES("Georgia")
+    INSERT INTO country VALUES("Germany")
+    INSERT INTO country VALUES("Ghana")
+    INSERT INTO country VALUES("Gibraltar")
+    INSERT INTO country VALUES("Greece")
+    INSERT INTO country VALUES("Greenland")
+    INSERT INTO country VALUES("Grenada")
+    INSERT INTO country VALUES("Guadeloupe")
+    INSERT INTO country VALUES("Guam")
+    INSERT INTO country VALUES("Guatemala")
+    INSERT INTO country VALUES("Guernsey")
+    INSERT INTO country VALUES("Guinea")
+    INSERT INTO country VALUES("Guinea-Bissau")
+    INSERT INTO country VALUES("Guyana")
+    INSERT INTO country VALUES("Haiti")
+    INSERT INTO country VALUES("Heard Island and Mcdonald Islands")
+    INSERT INTO country VALUES("Holy See (Vatican City State)")
+    INSERT INTO country VALUES("Honduras")
+    INSERT INTO country VALUES("Hong Kong")
+    INSERT INTO country VALUES("Hungary")
+    INSERT INTO country VALUES("Iceland")
+    INSERT INTO country VALUES("India")
+    INSERT INTO country VALUES("Indonesia")
+    INSERT INTO country VALUES("Iran, Islamic Republic of")
+    INSERT INTO country VALUES("Iraq")
+    INSERT INTO country VALUES("Ireland")
+    INSERT INTO country VALUES("Isle of Man")
+    INSERT INTO country VALUES("Israel")
+    INSERT INTO country VALUES("Italy")
+    INSERT INTO country VALUES("Jamaica")
+    INSERT INTO country VALUES("Japan")
+    INSERT INTO country VALUES("Jersey")
+    INSERT INTO country VALUES("Jordan")
+    INSERT INTO country VALUES("Kazakhstan")
+    INSERT INTO country VALUES("Kenya")
+    INSERT INTO country VALUES("Kiribati")
+    INSERT INTO country VALUES("Korea, Democratic People's Republic of")
+    INSERT INTO country VALUES("Korea, Republic of")
+    INSERT INTO country VALUES("Kuwait")
+    INSERT INTO country VALUES("Kyrgyzstan")
+    INSERT INTO country VALUES("Lao people's Democratic Republic")
+    INSERT INTO country VALUES("Latvia")
+    INSERT INTO country VALUES("Lebanon")
+    INSERT INTO country VALUES("Lesotho")
+    INSERT INTO country VALUES("Liberia")
+    INSERT INTO country VALUES("Libyan Arab Jamahiriya")
+    INSERT INTO country VALUES("Liechtenstein")
+    INSERT INTO country VALUES("Lithuania")
+    INSERT INTO country VALUES("Luxembourg")
+    INSERT INTO country VALUES("Macao")
+    INSERT INTO country VALUES("Macedonia, the Former Yugoslav Republic of")
+    INSERT INTO country VALUES("Madagascar")
+    INSERT INTO country VALUES("Malawi")
+    INSERT INTO country VALUES("Malaysia")
+    INSERT INTO country VALUES("Maldives")
+    INSERT INTO country VALUES("Mali")
+    INSERT INTO country VALUES("Malta")
+    INSERT INTO country VALUES("Marshall Islands")
+    INSERT INTO country VALUES("Martinique")
+    INSERT INTO country VALUES("Mauritania")
+    INSERT INTO country VALUES("Mauritius")
+    INSERT INTO country VALUES("Mayotte")
+    INSERT INTO country VALUES("Mexico")
+    INSERT INTO country VALUES("Micronesia, Federated States of")
+    INSERT INTO country VALUES("Moldova")
+    INSERT INTO country VALUES("Monaco")
+    INSERT INTO country VALUES("Mongolia")
+    INSERT INTO country VALUES("Montenegro")
+    INSERT INTO country VALUES("Montserrat")
+    INSERT INTO country VALUES("Morocco")
+    INSERT INTO country VALUES("Mozambique")
+    INSERT INTO country VALUES("Myanmar")
+    INSERT INTO country VALUES("Namibia")
+    INSERT INTO country VALUES("Nauru")
+    INSERT INTO country VALUES("Nepal")
+    INSERT INTO country VALUES("Netherlands")
+    INSERT INTO country VALUES("Netherlands Antilles")
+    INSERT INTO country VALUES("New Caledonia")
+    INSERT INTO country VALUES("New Zealand")
+    INSERT INTO country VALUES("Nicaragua")
+    INSERT INTO country VALUES("Niger")
+    INSERT INTO country VALUES("Nigeria")
+    INSERT INTO country VALUES("Niue")
+    INSERT INTO country VALUES("Norfolk Island")
+    INSERT INTO country VALUES("Northern Mariana Islands")
+    INSERT INTO country VALUES("Norway")
+    INSERT INTO country VALUES("Oman")
+    INSERT INTO country VALUES("Pakistan")
+    INSERT INTO country VALUES("Palau")
+    INSERT INTO country VALUES("Palestinian Territory, Occupied")
+    INSERT INTO country VALUES("Panama")
+    INSERT INTO country VALUES("Papua New Guinea")
+    INSERT INTO country VALUES("Paraguay")
+    INSERT INTO country VALUES("Peru")
+    INSERT INTO country VALUES("Philippines")
+    INSERT INTO country VALUES("Pitcairn")
+    INSERT INTO country VALUES("Poland")
+    INSERT INTO country VALUES("Portugal")
+    INSERT INTO country VALUES("Puerto Rico")
+    INSERT INTO country VALUES("Qatar")
+    INSERT INTO country VALUES("Reunion")
+    INSERT INTO country VALUES("Romania")
+    INSERT INTO country VALUES("Russian Federation")
+    INSERT INTO country VALUES("Rwanda")
+    INSERT INTO country VALUES("Saint Barthelemy")
+    INSERT INTO country VALUES("Saint Helena")
+    INSERT INTO country VALUES("Saint Kitts and Nevis")
+    INSERT INTO country VALUES("Saint Lucia")
+    INSERT INTO country VALUES("Saint Martin")
+    INSERT INTO country VALUES("Saint Pierre and Miquelon")
+    INSERT INTO country VALUES("Saint Vincent and the Grenadines")
+    INSERT INTO country VALUES("Samoa")
+    INSERT INTO country VALUES("San Marino")
+    INSERT INTO country VALUES("Sao Tome and Principe")
+    INSERT INTO country VALUES("Saudi Arabia")
+    INSERT INTO country VALUES("Senegal")
+    INSERT INTO country VALUES("Serbia")
+    INSERT INTO country VALUES("Seychelles")
+    INSERT INTO country VALUES("Sierra Leone")
+    INSERT INTO country VALUES("Singapore")
+    INSERT INTO country VALUES("Slovakia")
+    INSERT INTO country VALUES("Slovenia")
+    INSERT INTO country VALUES("Solomon Islands")
+    INSERT INTO country VALUES("Somalia")
+    INSERT INTO country VALUES("South Africa")
+    INSERT INTO country VALUES("South Georgia and the South Sandwich Islands")
+    INSERT INTO country VALUES("Spain")
+    INSERT INTO country VALUES("Sri Lanka")
+    INSERT INTO country VALUES("Sudan")
+    INSERT INTO country VALUES("Suriname")
+    INSERT INTO country VALUES("Svalbard and Jan Mayen")
+    INSERT INTO country VALUES("Swaziland")
+    INSERT INTO country VALUES("Sweden")
+    INSERT INTO country VALUES("Switzerland")
+    INSERT INTO country VALUES("Syrian Arab Republic")
+    INSERT INTO country VALUES("Taiwan, Province of China")
+    INSERT INTO country VALUES("Tajikistan")
+    INSERT INTO country VALUES("Tanzania, United Republic of")
+    INSERT INTO country VALUES("Thailand")
+    INSERT INTO country VALUES("Timor-leste")
+    INSERT INTO country VALUES("Togo")
+    INSERT INTO country VALUES("Tokelau")
+    INSERT INTO country VALUES("Tonga")
+    INSERT INTO country VALUES("Trinidad and Tobago")
+    INSERT INTO country VALUES("Tunisia")
+    INSERT INTO country VALUES("Turkey")
+    INSERT INTO country VALUES("Turkmenistan")
+    INSERT INTO country VALUES("Turks and Caicos Islands")
+    INSERT INTO country VALUES("Tuvalu")
+    INSERT INTO country VALUES("Uganda")
+    INSERT INTO country VALUES("Ukraine")
+    INSERT INTO country VALUES("United Arab Emirates")
+    INSERT INTO country VALUES("United Kingdom")
+    INSERT INTO country VALUES("United States")
+    INSERT INTO country VALUES("United States Minor Outlying Islands")
+    INSERT INTO country VALUES("Uruguay")
+    INSERT INTO country VALUES("Uzbekistan")
+    INSERT INTO country VALUES("Vanuatu")
+    INSERT INTO country VALUES("Vatican City State")
+    INSERT INTO country VALUES("Venezuela")
+    INSERT INTO country VALUES("Viet Nam")
+    INSERT INTO country VALUES("Virgin Islands, British")
+    INSERT INTO country VALUES("Virgin Islands, U.S.")
+    INSERT INTO country VALUES("Wallis and Futuna")
+    INSERT INTO country VALUES("Western Sahara")
+    INSERT INTO country VALUES("Yemen")
+    INSERT INTO country VALUES("Zambia")
+    INSERT INTO country VALUES("Zimbabwe")
 END FUNCTION
