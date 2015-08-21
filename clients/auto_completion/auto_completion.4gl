@@ -29,8 +29,9 @@ DEFINE country_name CHAR(50)
 
     INPUT BY NAME country, autoset ATTRIBUTES(UNBUFFERED, WITHOUT DEFAULTS=TRUE)
         ON CHANGE country
+        
             IF NOT m_cursor_prepared THEN
-                DECLARE country_curs CURSOR FROM SFMT("SELECT name FROM country WHERE UPPER(name) LIKE ? ORDER BY name LIMIT %1",COMPLETER_LIST_SIZE)
+                DECLARE country_curs CURSOR FROM SFMT("SELECT name FROM country WHERE UPPER(name) LIKE UPPER(?) ORDER BY name LIMIT %1",COMPLETER_LIST_SIZE)
                 LET m_cursor_prepared = TRUE
             END IF
           
@@ -38,7 +39,7 @@ DEFINE country_name CHAR(50)
             CALL completer_list.clear()
             LET filter = FGL_DIALOG_GETBUFFER()
             IF filter.getLength() >= MINIMUM_COMPLETER_LENGTH THEN
-                LET filter = filter.toUpperCase(),"%"
+                LET filter = filter,"%"
                 OPEN country_curs USING filter
                 FOR i = 1 TO COMPLETER_LIST_SIZE
                     FETCH country_curs INTO country_name
