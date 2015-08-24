@@ -214,30 +214,8 @@
       </Group>
     </Group>
     <Group label="04_htmlpagegenerator" targetDirectory="$(ProjectDir)/htmlpagegenerator/htmlpagegenerator">
-      <Application environment="value:FGLAPPSERVER=8092" id="380293705" label="htmlpagegenerator">
-        <VirtualFolder label="page">
-          <File filePath="htmlpagegenerator/pages/MyOtherPage.json"/>
-          <File filePath="htmlpagegenerator/pages/MyOtherPage.xhtml"/>
-          <File filePath="htmlpagegenerator/pages/MyOtherPage2.json"/>
-          <File filePath="htmlpagegenerator/pages/MyPage.json"/>
-          <File filePath="htmlpagegenerator/pages/MyPage.xhtml"/>
-          <File filePath="htmlpagegenerator/pages/MyPage2.json"/>
-          <File filePath="htmlpagegenerator/pages/MySimplePage.json"/>
-          <File filePath="htmlpagegenerator/pages/MySimplePage.xhtml"/>
-        </VirtualFolder>
-        <VirtualFolder label="res">
-          <File filePath="htmlpagegenerator/res/error_page.xhtml"/>
-        </VirtualFolder>
-        <VirtualFolder label="src">
-          <File filePath="htmlpagegenerator/src/Compiler.4gl"/>
-          <File filePath="htmlpagegenerator/src/Data.4gl"/>
-          <File filePath="htmlpagegenerator/src/Generator.4gl"/>
-          <File filePath="htmlpagegenerator/src/Server.4gl"/>
-          <File filePath="htmlpagegenerator/src/Utils.4gl"/>
-        </VirtualFolder>
-        <File filePath="htmlpagegenerator/readme.txt"/>
-      </Application>
-      <Application environment="value:FGLAPPSERVER=8093" id="-77812122" label="simplepagegenerator">
+      <Application environment="value:FGLAPPSERVER=8093" id="-77812122" label="simplepagegenerator" targetDirectory="$(ProjectDir)/htmlpagegenerator">
+        <File filePath="htmlpagegenerator/htmlpagegenerator/readme.txt"/>
         <File filePath="htmlpagegenerator/simplepagegenerator.4gl"/>
       </Application>
     </Group>
