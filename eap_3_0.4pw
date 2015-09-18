@@ -1,12 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="-77812122" gstVersion="23217" version="3.0">
-  <Settings/>
+<Project defaultApplication="723292643" gstVersion="3000a" version="3.1">
+  <Settings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="High-DPI Icon (72x72 px) path" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon-hdpi (72x72 px)" name="icon-hdpi" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Low-DPI Icon (36x36 px) path" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon-ldpi (36x36 px)" name="icon-ldpi" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Medium-DPI Icon (48x48 px) path" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon-mdpi (48x48 px)" name="icon-mdpi" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Extra High-DPI Icon (96x96 px) path" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon-xhdpi (96x96 px)" name="icon-xhdpi" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Extra Extra High-DPI Icon (144x144 px) path" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon-xxhdpi (144x144 px)" name="icon-xxhdpi" readOnly="false" type="FILE"/>
+      <DynamicProperty description="120x120 pixel icon (used for home screen)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (120x120 px)" name="icon120x120" readOnly="false" type="FILE"/>
+      <DynamicProperty description="152x152 pixel icon (used for home screen)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (152x152 px)" name="icon152x152" readOnly="false" type="FILE"/>
+      <DynamicProperty description="180x180 pixel icon (used for home screen)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (180x180 px)" name="icon180x180" readOnly="false" type="FILE"/>
+      <DynamicProperty description="29x29 pixel icon (used for settings)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (29x29 px)" name="icon29x29" readOnly="false" type="FILE"/>
+      <DynamicProperty description="40x40 pixel icon (used for settings)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (40x40 px)" name="icon40x40" readOnly="false" type="FILE"/>
+      <DynamicProperty description="58x58 pixel icon (used for settings)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (58x58 px)" name="icon58x58" readOnly="false" type="FILE"/>
+      <DynamicProperty description="60x60 pixel icon (used for settings)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (60x60 px)" name="icon60x60" readOnly="false" type="FILE"/>
+      <DynamicProperty description="76x76 pixel icon (used for home screen)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (76x76 px)" name="icon76x76" readOnly="false" type="FILE"/>
+      <DynamicProperty description="80x80 pixel icon (used for home screen)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (80x80 px)" name="icon80x80" readOnly="false" type="FILE"/>
+      <DynamicProperty description="87x87 pixel icon (used for home screen)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon (87x87 px)" name="icon87x87" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPhone 5" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (640x1136 px)" name="launchScreen" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPad (landcape)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (1024x768 px)" name="launchScreen1024x768" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPhone 6+ (portrait)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (1242x2208 px)" name="launchScreen1242x2208" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPhone 6 (landscape)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (1334x750 px)" name="launchScreen1334x750" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPad (portrait)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (1536x2048 px)" name="launchScreen1536x2048" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPad (landscape)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (2048x1536 px)" name="launchScreen2048x1536" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPhone 6+ (landscape)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (2208x1242 px)" name="launchScreen2208x1242" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPhone" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (320x480 px)" name="launchScreen320x480" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPhone 4" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (640x960 px)" name="launchScreen640x960" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPhone 6 (portrait)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (750x1334 px)" name="launchScreen750x1334" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen for iPad (portrait)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (768x1024 px)" name="launchScreen768x1024" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen XIB file (Created from Xcode)" editorInfo="filters:*.xib;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen XIB" name="launchScreenXib" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Package identifier" initialValue="" isDefaultInherited="false" isHidden="false" label="ID" name="packageId" readOnly="false" type="TEXT"/>
+      <DynamicProperty description="Label of the package" initialValue="" isDefaultInherited="false" isHidden="false" label="Label" name="packageLabel" readOnly="false" type="TEXT"/>
+      <DynamicProperty description="Name of the package" initialValue="" isDefaultInherited="false" isHidden="false" label="Name" name="packageName" readOnly="false" type="TEXT"/>
+      <DynamicProperty description="Version of the package" initialValue="1" isDefaultInherited="false" isHidden="false" label="Version" name="packageVersion" readOnly="false" type="TEXT"/>
+      <DynamicProperty description="Version of the package displayed to the user" initialValue="1" isDefaultInherited="false" isHidden="false" label="VersionName" name="packageVersionName" readOnly="false" type="TEXT"/>
+      <DynamicProperty editorInfo="title:Permissions;description:Android permissions;icon:checkbox_checked;contains:ACCESS_CHECKIN_PROPERTIES|ACCESS_COARSE_LOCATION|ACCESS_FINE_LOCATION|ACCESS_LOCATION_EXTRA_COMMANDS|ACCESS_MOCK_LOCATION|ACCESS_NETWORK_STATE|ACCESS_SURFACE_FLINGER|ACCESS_WIFI_STATE|ACCOUNT_MANAGER|ADD_VOICEMAIL|AUTHENTICATE_ACCOUNTS|BATTERY_STATS|BIND_ACCESSIBILITY_SERVICE|BIND_APPWIDGET|BIND_CARRIER_MESSAGING_SERVICE|BIND_DEVICE_ADMIN|BIND_DREAM_SERVICE|BIND_INPUT_METHOD|BIND_NFC_SERVICE|BIND_NOTIFICATION_LISTENER_SERVICE|BIND_PRINT_SERVICE|BIND_REMOTEVIEWS|BIND_TEXT_SERVICE|BIND_TV_INPUT|BIND_VOICE_INTERACTION|BIND_VPN_SERVICE|BIND_WALLPAPER|BLUETOOTH|BLUETOOTH_ADMIN|BLUETOOTH_PRIVILEGED|BODY_SENSORS|BRICK|BROADCAST_PACKAGE_REMOVED|BROADCAST_SMS|BROADCAST_STICKY|BROADCAST_WAP_PUSH|CALL_PHONE|CALL_PRIVILEGED|CAMERA|CAPTURE_AUDIO_OUTPUT|CAPTURE_SECURE_VIDEO_OUTPUT|CAPTURE_VIDEO_OUTPUT|CHANGE_COMPONENT_ENABLED_STATE|CHANGE_CONFIGURATION|CHANGE_NETWORK_STATE|CHANGE_WIFI_MULTICAST_STATE|CHANGE_WIFI_STATE|CLEAR_APP_CACHE|CLEAR_APP_USER_DATA|CONTROL_LOCATION_UPDATES|DELETE_CACHE_FILES|DELETE_PACKAGES|DEVICE_POWER|DIAGNOSTIC|DISABLE_KEYGUARD|DUMP|EXPAND_STATUS_BAR|FACTORY_TEST|FLASHLIGHT|FORCE_BACK|GET_ACCOUNTS|GET_PACKAGE_SIZE|GET_TASKS|GET_TOP_ACTIVITY_INFO|GLOBAL_SEARCH|HARDWARE_TEST|INJECT_EVENTS|INSTALL_LOCATION_PROVIDER|INSTALL_PACKAGES|INSTALL_SHORTCUT|INTERNAL_SYSTEM_WINDOW|INTERNET|KILL_BACKGROUND_PROCESSES|LOCATION_HARDWARE|MANAGE_ACCOUNTS|MANAGE_APP_TOKENS|MANAGE_DOCUMENTS|MASTER_CLEAR|MEDIA_CONTENT_CONTROL|MODIFY_AUDIO_SETTINGS|MODIFY_PHONE_STATE|MOUNT_FORMAT_FILESYSTEMS|MOUNT_UNMOUNT_FILESYSTEMS|NFC|PERSISTENT_ACTIVITY|PROCESS_OUTGOING_CALLS|READ_CALENDAR|READ_CALL_LOG|READ_CONTACTS|READ_EXTERNAL_STORAGE|READ_FRAME_BUFFER|READ_HISTORY_BOOKMARKS|READ_INPUT_STATE|READ_LOGS|READ_PHONE_STATE|READ_PROFILE|READ_SMS|READ_SOCIAL_STREAM|READ_SYNC_SETTINGS|READ_SYNC_STATS|READ_USER_DICTIONARY|READ_VOICEMAIL|REBOOT|RECEIVE_BOOT_COMPLETED|RECEIVE_MMS|RECEIVE_SMS|RECEIVE_WAP_PUSH|RECORD_AUDIO|REORDER_TASKS|RESTART_PACKAGES|SEND_RESPOND_VIA_MESSAGE|SEND_SMS|SET_ACTIVITY_WATCHER|SET_ALARM|SET_ALWAYS_FINISH|SET_ANIMATION_SCALE|SET_DEBUG_APP|SET_ORIENTATION|SET_POINTER_SPEED|SET_PREFERRED_APPLICATIONS|SET_PROCESS_LIMIT|SET_TIME|SET_TIME_ZONE|SET_WALLPAPER|SET_WALLPAPER_HINTS|SIGNAL_PERSISTENT_PROCESSES|STATUS_BAR|SUBSCRIBED_FEEDS_READ|SUBSCRIBED_FEEDS_WRITE|SYSTEM_ALERT_WINDOW|TRANSMIT_IR|UNINSTALL_SHORTCUT|UPDATE_DEVICE_STATS|USE_CREDENTIALS|USE_SIP|VIBRATE|WAKE_LOCK|WRITE_APN_SETTINGS|WRITE_CALENDAR|WRITE_CALL_LOG|WRITE_CONTACTS|WRITE_EXTERNAL_STORAGE|WRITE_GSERVICES|WRITE_HISTORY_BOOKMARKS|WRITE_PROFILE|WRITE_SECURE_SETTINGS|WRITE_SETTINGS|WRITE_SMS|WRITE_SOCIAL_STREAM|WRITE_SYNC_SETTINGS|WRITE_USER_DICTIONARY|WRITE_VOICEMAIL" initialValue="ACCESS_COARSE_LOCATION||ACCESS_FINE_LOCATION||ACCESS_NETWORK_STATE||ACCESS_WIFI_STATE||INSTALL_SHORTCUT||INTERNET||READ_CONTACTS||READ_EXTERNAL_STORAGE||WRITE_EXTERNAL_STORAGE" isDefaultInherited="false" isHidden="false" label="Permissions" name="permissions" readOnly="false" type="MULTIPLEBOOLEAN"/>
+      <DynamicProperty description="Requirements" editorInfo="title:Requirements;description:iOS Requirements;icon:checkbox_checked;contains:accelerometer|auto-focus-camera|armv6|armv7|bluetooth-le|camera-flash|front-facing-camera|gamekit|gps|gyroscope|healthkit|magnetometer|metal|microphone|location-services|opengles-1|opengles-2|opengles-3|peer-peer|sms|still-camera|telephony|video-camera|wifi" initialValue="wifi" isDefaultInherited="false" isHidden="false" label="Requirements" name="required" readOnly="false" type="MULTIPLEBOOLEAN"/>
+      <DynamicPropertyGroup collapsed="false" description="Android" label="Android" name="AndroidGroup" properties="packageVersionName;icon-ldpi;icon-mdpi;icon-hdpi;icon-xhdpi;icon-xxhdpi;permissions"/>
+      <DynamicPropertyGroup collapsed="false" description="Package" label="Package" name="PackageGroup" properties="packageId;packageName;packageLabel;packageVersion"/>
+      <DynamicPropertyGroup collapsed="false" description="iOS" label="iOS" name="iOSGroup" properties="launchScreen320x480;launchScreen640x960;launchScreen;launchScreen750x1334;launchScreen1334x750;launchScreen1242x2208;launchScreen2208x1242;launchScreen768x1024;launchScreen1024x768;launchScreen1536x2048;launchScreen2048x1536;launchScreenXib;icon29x29;icon40x40;icon58x58;icon60x60;icon76x76;icon80x80;icon87x87;icon120x120;icon152x152;icon180x180;required"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="pm/package" properties="packageId;packageLabel;packageName;packageVersion;packageVersionName;launchScreen320x480;launchScreen640x960;launchScreen;launchScreen750x1334;launchScreen1334x750;launchScreen1242x2208;launchScreen2208x1242;launchScreen768x1024;launchScreen1024x768;launchScreen1536x2048;launchScreen2048x1536;launchScreenXib;icon29x29;icon40x40;icon58x58;icon60x60;icon76x76;icon80x80;icon87x87;icon120x120;icon152x152;icon180x180;icon-ldpi;icon-mdpi;icon-hdpi;icon-xhdpi;icon-xxhdpi;permissions;required"/>
+    </NodeInfos>
+  </Settings>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
-  <Group label="eap_3_0" targetDirectory="$(ProjectDir)">
+  <Group label="eap_3_0" language="Genero" targetDirectory="$(ProjectDir)">
     <Group label="01_clients">
       <Group label="01_auto_completion" targetDirectory="$(ProjectDir)/clients/auto_completion">
-        <Application id="195998289" label="auto_completion">
+        <Application binaryName="auto_completion" id="195998289" label="auto_completion">
           <File filePath="clients/auto_completion/auto_completion.4gl"/>
           <File filePath="clients/auto_completion/auto_completion.4st"/>
           <File filePath="clients/auto_completion/auto_completion.per"/>
@@ -14,48 +57,48 @@
         </Application>
       </Group>
       <Group label="02_clickable_image" targetDirectory="$(ProjectDir)/clients/clickable_image">
-        <Application id="1040486991" label="add_to_basket">
+        <Application binaryName="add_to_basket" id="1040486991" label="add_to_basket">
           <File filePath="clients/clickable_image/add_to_basket.4gl"/>
           <File filePath="clients/clickable_image/add_to_basket.per"/>
           <File filePath="clients/clickable_image/readme_add_to_basket.txt"/>
         </Application>
-        <Application id="-280506466" label="splash">
+        <Application binaryName="splash" id="-280506466" label="splash">
           <File filePath="clients/clickable_image/readme_splash.txt"/>
           <File filePath="clients/clickable_image/splash.4gl"/>
           <File filePath="clients/clickable_image/splash.4st"/>
           <File filePath="clients/clickable_image/splash.per"/>
         </Application>
-        <Application id="-1936479334" label="update_delete">
+        <Application binaryName="update_delete" id="-1936479334" label="update_delete">
           <File filePath="clients/clickable_image/readme_update_delete.txt"/>
           <File filePath="clients/clickable_image/update_delete.4gl"/>
           <File filePath="clients/clickable_image/update_delete.per"/>
         </Application>
       </Group>
       <Group label="03_datetime" targetDirectory="$(ProjectDir)/clients/datetime">
-        <Application id="1469528948" label="datetimeedit">
+        <Application binaryName="datetimeedit" id="1469528948" label="datetimeedit">
           <File filePath="clients/datetime/datetimeedit.4gl"/>
           <File filePath="clients/datetime/datetimeedit.per"/>
           <File filePath="clients/datetime/readme_datetimeedit.txt"/>
         </Application>
-        <Application id="241782672" label="timeedit">
+        <Application binaryName="timeedit" id="241782672" label="timeedit">
           <File filePath="clients/datetime/readme_timeedit.txt"/>
           <File filePath="clients/datetime/timeedit.4gl"/>
           <File filePath="clients/datetime/timeedit.per"/>
         </Application>
       </Group>
       <Group label="04_webcomponent" targetDirectory="$(ProjectDir)/clients/webcomponent">
-        <Application id="-944210476" label="blank">
+        <Application binaryName="blank" id="-944210476" label="blank">
           <File filePath="clients/webcomponent/blank.4gl"/>
           <File filePath="clients/webcomponent/blank.per"/>
           <File filePath="clients/webcomponent/readme_blank.txt"/>
         </Application>
-        <Application id="-843633280" label="programmable">
+        <Application binaryName="programmable" id="-843633280" label="programmable">
           <File filePath="clients/webcomponent/programmable.4gl"/>
           <File filePath="clients/webcomponent/programmable.html"/>
           <File filePath="clients/webcomponent/programmable.per"/>
           <File filePath="readme_programmable.txt"/>
         </Application>
-        <Application environment="dirlist:FGLIMAGEPATH=./touchpad" id="-1017269824" label="touchpad">
+        <Application binaryName="touchpad" environment="dirlist:FGLIMAGEPATH=./touchpad" id="-1017269824" label="touchpad">
           <VirtualFolder label="touchpad">
             <File filePath="clients/webcomponent/touchpad/touchpad.html"/>
           </VirtualFolder>
@@ -65,7 +108,7 @@
         </Application>
       </Group>
       <Group label="05_scrollgrid" targetDirectory="$(ProjectDir)/clients/scrollgrid">
-        <Application id="527187058" label="scrollgrid">
+        <Application binaryName="scrollgrid" id="527187058" label="scrollgrid">
           <File filePath="clients/scrollgrid/readme.txt"/>
           <File filePath="clients/scrollgrid/scrollgrid.4gl"/>
           <File filePath="clients/scrollgrid/scrollgrid_no.per"/>
@@ -73,28 +116,28 @@
         </Application>
       </Group>
       <Group label="06_image_centralization" targetDirectory="$(ProjectDir)/clients/image/centralization">
-        <Application id="1685104767" label="fontawesome">
+        <Application binaryName="fontawesome" id="1685104767" label="fontawesome">
           <File filePath="clients/image_centralization/fontawesome.4gl"/>
           <File filePath="clients/image_centralization/fontawesome.per"/>
           <File filePath="clients/image_centralization/readme.txt"/>
         </Application>
       </Group>
       <Group label="07_copy_readonly" targetDirectory="$(ProjectDir)/clients/copy_readonly">
-        <Application id="723292643" label="copy_readonly">
+        <Application binaryName="copy_readonly" id="723292643" label="copy_readonly">
           <File filePath="clients/copy_readonly/copy_readonly.4gl"/>
           <File filePath="clients/copy_readonly/copy_readonly.per"/>
           <File filePath="clients/copy_readonly/readme.txt"/>
         </Application>
       </Group>
       <Group label="08_responsive_layout" targetDirectory="$(ProjectDir)/clients/responsive_layout">
-        <Application id="173556028" label="responsivelayout">
+        <Application binaryName="responsivelayout" id="173556028" label="responsivelayout">
           <File filePath="clients/responsive_layout/readme.txt"/>
           <File filePath="clients/responsive_layout/responsive_layout.4gl"/>
           <File filePath="clients/responsive_layout/responsive_layout.per"/>
         </Application>
       </Group>
       <Group label="09_predictable_layout" targetDirectory="$(ProjectDir)/clients/predictive_layout">
-        <Application id="-921382068" label="emptyrowcol">
+        <Application binaryName="emptyrowcol" id="-921382068" label="emptyrowcol">
           <File filePath="clients/predictable_layout/emptyrowcol.4gl"/>
           <File filePath="clients/predictable_layout/emptyrowcol.4st"/>
           <File filePath="clients/predictable_layout/emptyrowcol.per"/>
@@ -104,24 +147,24 @@
     </Group>
     <Group label="02_language">
       <Group label="01_on_timer" targetDirectory="$(ProjectDir)/language/on_timer">
-        <Application id="-267096914" label="on_timer">
+        <Application binaryName="on_timer" id="-267096914" label="on_timer">
           <File filePath="language/on_timer/on_timer.4gl"/>
           <File filePath="language/on_timer/on_timer.per"/>
           <File filePath="language/on_timer/readme.txt"/>
         </Application>
       </Group>
       <Group label="02_sort" targetDirectory="$(ProjectDir)/language/sort">
-        <Application id="170781338" label="on_fill_buffer">
+        <Application binaryName="on_fill_buffer" id="170781338" label="on_fill_buffer">
           <File filePath="language/sort/readme_sort_on_fill_buffer.txt"/>
           <File filePath="language/sort/sort_on_fill_buffer.4gl"/>
           <File filePath="language/sort/sort_on_fill_buffer.per"/>
         </Application>
-        <Application id="1279849724" label="on_sort">
+        <Application binaryName="on_sort" id="1279849724" label="on_sort">
           <File filePath="language/sort/on_sort.4gl"/>
           <File filePath="language/sort/on_sort.per"/>
           <File filePath="language/sort/readme_on_sort.txt"/>
         </Application>
-        <Application id="1718617188" label="sort_method">
+        <Application binaryName="sort_method" id="1718617188" label="sort_method">
           <File filePath="language/sort/readme_sort_method.txt"/>
           <File filePath="language/sort/sort_method.4gl"/>
           <File filePath="language/sort/sort_method.per"/>
@@ -129,47 +172,47 @@
         </Application>
       </Group>
       <Group label="03_generic_ui">
-        <Application id="171279842" label="base_sql_handle" targetDirectory="$(ProjectDir)/language/generic_ui">
+        <Application binaryName="base_sql_handle" id="171279842" label="base_sql_handle" targetDirectory="$(ProjectDir)/language/generic_ui">
           <File filePath="language/generic_ui/base_sql_handle.4gl"/>
           <File filePath="language/generic_ui/readme_base_sql_handle.txt"/>
         </Application>
-        <Application id="1925520000" label="generic_ui">
+        <Application binaryName="generic_ui" id="1925520000" label="generic_ui">
           <File filePath="readme_generic_ui.txt"/>
         </Application>
       </Group>
       <Group label="04_action_attribute">
-        <Application id="-370079158" label="action_attribute" targetDirectory="$(ProjectDir)/language/action_attribute">
+        <Application binaryName="action_attribute" id="-370079158" label="action_attribute" targetDirectory="$(ProjectDir)/language/action_attribute">
           <File filePath="language/action_attribute/action_attribute.4gl"/>
           <File filePath="language/action_attribute/readme.txt"/>
         </Application>
       </Group>
       <Group label="05_base_channel_server" targetDirectory="$(ProjectDir)/language/base_channel_server">
-        <Application id="308128018" label="base_channel_client">
+        <Application binaryName="base_channel_client" id="308128018" label="base_channel_client">
           <File filePath="language/base_channel_server/base_channel_client.4gl"/>
           <File filePath="language/base_channel_server/base_channel_client.per"/>
         </Application>
-        <Application id="-2083586622" label="base_channel_server">
+        <Application binaryName="base_channel_server" id="-2083586622" label="base_channel_server">
           <File filePath="language/base_channel_server/base_channel_server.4gl"/>
           <File filePath="language/base_channel_server/base_channel_server.per"/>
           <File filePath="language/base_channel_server/readme.txt"/>
         </Application>
       </Group>
       <Group label="06_on_selection_change" targetDirectory="$(ProjectDir)/language/on_selection_change">
-        <Application id="1831788688" label="on_selection_change">
+        <Application binaryName="on_selection_change" id="1831788688" label="on_selection_change">
           <File filePath="language/on_selection_change/on_selection_change.4gl"/>
           <File filePath="language/on_selection_change/on_selection_change.per"/>
           <File filePath="language/on_selection_change/readme.txt"/>
         </Application>
       </Group>
       <Group label="07_string_utility" targetDirectory="$(ProjectDir)/language/string_utility">
-        <Application id="-1030265552" label="encode_decode">
+        <Application binaryName="encode_decode" id="-1030265552" label="encode_decode">
           <File filePath="language/string_utility/encode_decode.4gl"/>
           <File filePath="language/string_utility/encode_decode.per"/>
           <File filePath="language/string_utility/readme.txt"/>
         </Application>
       </Group>
       <Group label="08_datetime_utility" targetDirectory="$(ProjectDir)/language/datetime_utility">
-        <Application id="-882117745" label="datetime_utility">
+        <Application binaryName="datetime_utility" id="-882117745" label="datetime_utility">
           <File filePath="language/datetime_utility/datetime_utility.4gl"/>
           <File filePath="language/datetime_utility/datetime_utility.per"/>
           <File filePath="language/datetime_utility/readme.txt"/>
@@ -179,7 +222,7 @@
     </Group>
     <Group label="03_mobile">
       <Group label="01_stack" targetDirectory="$(ProjectDir)/mobile/stack">
-        <Application id="1142316768" label="stack">
+        <Application binaryName="stack" id="1142316768" label="stack">
           <File filePath="mobile/stack/grid.per"/>
           <File filePath="mobile/stack/readme.txt"/>
           <File filePath="mobile/stack/stack.per"/>
@@ -187,26 +230,26 @@
         </Application>
       </Group>
       <Group label="03_run_on_server" targetDirectory="$(ProjectDir)/mobile/run_on_server">
-        <Application environment="value:LANG=en_NZ.UTF-8" id="-353163129" label="run_on_server">
+        <Application binaryName="run_on_server" environment="value:LANG=en_NZ.UTF-8" id="-353163129" label="run_on_server">
           <File filePath="mobile/run_on_server/readme.txt"/>
           <File filePath="mobile/run_on_server/run_on_server.4gl"/>
         </Application>
       </Group>
       <Group label="04_fab" targetDirectory="$(ProjectDir)/mobile/fab">
-        <Application id="1769506400" label="fab">
+        <Application binaryName="fab" id="1769506400" label="fab">
           <File filePath="mobile/fab/fab.4gl"/>
           <File filePath="mobile/fab/fab.per"/>
           <File filePath="mobile/fab/readme.txt"/>
         </Application>
       </Group>
       <Group label="05_video">
-        <Application id="1983600576" label="video"/>
+        <Application binaryName="video" id="1983600576" label="video"/>
       </Group>
       <Group label="06_push">
-        <Application id="1579525984" label="push"/>
+        <Application binaryName="push" id="1579525984" label="push"/>
       </Group>
       <Group label="07_feinfo" targetDirectory="$(ProjectDir)/mobile/feinfo">
-        <Application id="1154918616" label="feinfo">
+        <Application binaryName="feinfo" id="1154918616" label="feinfo">
           <File filePath="mobile/feinfo/feinfo.4gl"/>
           <File filePath="mobile/feinfo/feinfo.per"/>
           <File filePath="mobile/feinfo/readme.txt"/>
@@ -214,7 +257,7 @@
       </Group>
     </Group>
     <Group label="04_htmlpagegenerator" targetDirectory="$(ProjectDir)/htmlpagegenerator/htmlpagegenerator">
-      <Application environment="value:FGLAPPSERVER=8093" id="-77812122" label="simplepagegenerator" targetDirectory="$(ProjectDir)/htmlpagegenerator">
+      <Application binaryName="simplepagegenerator" environment="value:FGLAPPSERVER=8093" id="-77812122" label="simplepagegenerator" targetDirectory="$(ProjectDir)/htmlpagegenerator">
         <File filePath="htmlpagegenerator/htmlpagegenerator/readme.txt"/>
         <File filePath="htmlpagegenerator/simplepagegenerator.4gl"/>
       </Application>
