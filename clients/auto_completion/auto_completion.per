@@ -1,11 +1,25 @@
 LAYOUT (TEXT="AutoCompletion")
+VBOX
+GROUP (TEXT="Simple Example")
 GRID
 {
 Country     [f01                        ]
-Autoset     [f02]
+Autoset     [x]
 }
+END
+END
+GROUP (TEXT="Two Valued Example")
+GRID
+{
+Airport    [f02                                   ]
+}
+END
+END
 END
 END
 ATTRIBUTES
 EDIT f01 = formonly.country, COMPLETER, COMMENT="Enter a country";
-CHECKBOX f02 = formonly.autoset, VALUECHECKED=TRUE, VALUEUNCHECKED=FALSE, NOT NULL, COMMENT="Select to set if one item in list";
+CHECKBOX x = formonly.autoset, VALUECHECKED=TRUE, VALUEUNCHECKED=FALSE, NOT NULL, COMMENT="Select to set if one item in list";
+
+EDIT f02 = formonly.iata_code, COMPLETER, COMMENT="Enter departure airport";
+
