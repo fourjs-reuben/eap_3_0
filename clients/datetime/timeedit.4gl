@@ -1,10 +1,27 @@
 MAIN
 DEFINE hhmm DATETIME HOUR TO MINUTE
 DEFINE hhmmss DATETIME HOUR TO SECOND
+DEFINE hhmmc5 CHAR(5)
+DEFINE hhmmssc8 CHAR(8)
+
+DEFINE datec10 CHAR(10)
+DEFINE spinc10 CHAR(10)
 
     OPTIONS INPUT WRAP
     LET hhmm = CURRENT 
     LET hhmmss = hhmm
+    LET hhmmc5 = CURRENT HOUR TO MINUTE
+    LET hhmmssc8 = CURRENT HOUR TO SECOND
+
+    LET datec10 = "11/11/2015"
+    LET spinc10 = "0"
     OPEN WINDOW w WITH FORM "timeedit"
-    INPUT BY NAME hhmm,hhmmss ATTRIBUTES(UNBUFFERED, WITHOUT DEFAULTS=TRUE)
+    INPUT BY NAME hhmm,hhmmss,hhmmc5, hhmmssc8, datec10, spinc10 ATTRIBUTES(UNBUFFERED, WITHOUT DEFAULTS=TRUE)
+
+    DISPLAY hhmm
+    DISPLAY hhmmss
+    DISPLAY hhmmc5
+    DISPLAY hhmmssc8
+    DISPLAY datec10
+    DISPLAY spinc10
 END MAIN

@@ -4,6 +4,12 @@ GRID
 Datetime Hour To Minute   [f01     ]
 Datetime Hour To Seconds  [f02     ]
 
+Char Hour To Minute       [f03  ]
+Char Hour To Seconds      [f04     ]
+
+Char to DateEdit [f05         ]
+Char to SpinEdit [f06         ]
+
 
 }
 END
@@ -11,3 +17,9 @@ END
 ATTRIBUTES
 TIMEEDIT f01 = formonly.hhmm;
 TIMEEDIT f02 = formonly.hhmmss;
+
+TIMEEDIT f03 = formonly.hhmmc5 TYPE DATETIME HOUR TO MINUTE;
+TIMEEDIT f04 = formonly.hhmmssc8 TYPE DATETIME HOUR TO SECOND;
+
+DATEEDIT f05 = formonly.datec10;
+SPINEDIT f06 = formonly.spinc10;

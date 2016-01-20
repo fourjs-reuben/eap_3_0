@@ -3,8 +3,8 @@ VBOX
 GROUP (TEXT="New DateTimeEdit Widget")
 GRID
 {
-Datetime Year To Minute  [f01                ]
-Datetime Year To Seconds [f02                ]
+Datetime Year To Minute  [f01                ]  Show Dateedit  [d01       ]
+Datetime Year To Seconds [f02                ]  
 }
 END
 END
@@ -24,3 +24,5 @@ DATETIMEEDIT f01 = formonly.yyyymmddhhmm;
 DATETIMEEDIT f02 = formonly.yyyymmddhhmmss;
 f03 = formonly.yyyymmddhhmm_old;
 f04 = formonly.yyyymmddhhmmss_old;
+
+DATEEDIT d01 = formonly.de;
