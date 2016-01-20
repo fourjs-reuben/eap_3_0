@@ -6,6 +6,7 @@ CONSTANT MINIMUM_COMPLETER_LENGTH=2   -- minimum characters to be entered
 MAIN
 DEFINE country STRING
 DEFINE iata_code STRING -- NOT CHAR(3)???
+DEFINE iata_code_c3 CHAR(3)
 DEFINE airport RECORD
     code CHAR(3),
     name CHAR(40),
@@ -36,7 +37,7 @@ DEFINE country_name CHAR(50)
     LET w = ui.Window.getCurrent()
     LET f= w.getForm()
 
-    INPUT BY NAME country, autoset, iata_code ATTRIBUTES(UNBUFFERED, WITHOUT DEFAULTS=TRUE)
+    INPUT BY NAME country, autoset, iata_code_c3, iata_code ATTRIBUTES(UNBUFFERED, WITHOUT DEFAULTS=TRUE)
         ON CHANGE country
         
             IF NOT m_country_cursor_prepared THEN
@@ -105,8 +106,12 @@ DEFINE country_name CHAR(50)
             ELSE
                 CALL DIALOG.setCompleterItems(NULL)
             END IF
+
+            --Save current value to working copy
+            LET iata_code_c3 = iata_code.subString(1,3)
+            
         ON ACTION current_value ATTRIBUTES(TEXT="Current Value")
-            CALL FGL_WINMESSAGE("Info",SFMT("Current country value = %1\nCurrent IATA code value = %2\nCurrent IATA Code value truncated to CHAR(3) = %3",country, iata_code, iata_code.subString(1,3)),"info")
+            CALL FGL_WINMESSAGE("Info",SFMT("Current country value = %1\nCurrent IATA code value = %2\nCurrent IATA Code value truncated to CHAR(3) = %3",country, iata_code, iata_code_c3),"info")
     END INPUT
 END MAIN
 
