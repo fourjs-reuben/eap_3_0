@@ -7,7 +7,6 @@ DEFINE seconds1, seconds2 INTEGER
     OPTIONS INPUT WRAP
     OPEN WINDOW w WITH FORM "datetime_utility"
 
-
     LET seconds1 = util.Datetime.toSecondsSinceEpoch(CURRENT)
     LET time2 = CURRENT 
     LET utc3 = util.Datetime.toUtc(CURRENT)
@@ -23,4 +22,5 @@ DEFINE seconds1, seconds2 INTEGER
         ON ACTION time2utc
             LET utc4 = util.Datetime.toUTC(time4)
     END INPUT
+    
 END MAIN
